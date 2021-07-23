@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Yellow Inbox Demo</string>
+    <string name="default_notification_channel_id">13</string>
+</resources>
