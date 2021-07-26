@@ -3,8 +3,6 @@ package ai.yellow.demo
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.ProcessLifecycleOwner
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.messaging.FirebaseMessaging
 import com.yellowmessenger.YellowInbox
 import com.yellowmessenger.YmAppProcessLifeCycleListener
 import com.yellowmessenger.datalayer.vo.Status
@@ -43,21 +41,25 @@ class YellowInboxDemoApplication : Application() {
         YellowInbox.setLocalReceiver(YellowDemoMessageReceiver())
 
         //Step-3  set firebase access token for Firebase notification (Optional)
-        getAndSetFcmAccessToken()
+        //getAndSetFcmAccessToken()
 
     }
 
-    private fun getAndSetFcmAccessToken() {
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            if (!task.isSuccessful) {
-                return@OnCompleteListener
-            }
+    /**
+     * To use this function  configure your project to use FCM
+     * */
 
-            // Get new FCM registration token
-            val token = task.result
-            if (!token.isNullOrEmpty() && isSdkInitialised(applicationContext)) {
-                YellowInbox.setFirebaseDeviceToken(token)
-            }
-        })
-    }
+    /* private fun getAndSetFcmAccessToken() {
+         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+             if (!task.isSuccessful) {
+                 return@OnCompleteListener
+             }
+
+             // Get new FCM registration token
+             val token = task.result
+             if (!token.isNullOrEmpty() && isSdkInitialised(applicationContext)) {
+                 YellowInbox.setFirebaseDeviceToken(token)
+             }
+         })
+     }*/
 }

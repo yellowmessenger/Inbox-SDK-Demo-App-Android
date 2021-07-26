@@ -11,7 +11,7 @@ fun getSharedPrefReference(context: Context): SharedPreferences {
 }
 
 
-fun initialiseInboxSdk(context: Context, initialised:Boolean){
+fun initialiseInboxSdk(context: Context, initialised: Boolean) {
     val sharedPreferences: SharedPreferences = getSharedPrefReference(context)
     with(sharedPreferences.edit()) {
         putBoolean(IS_INITIALISED, initialised)
@@ -20,7 +20,7 @@ fun initialiseInboxSdk(context: Context, initialised:Boolean){
 
 }
 
-fun isSdkInitialised(context: Context): Boolean{
+fun isSdkInitialised(context: Context): Boolean {
     val sharedPreferences: SharedPreferences = getSharedPrefReference(context)
     return sharedPreferences.getBoolean(IS_INITIALISED, false)
 }

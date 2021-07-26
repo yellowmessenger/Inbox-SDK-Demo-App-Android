@@ -4,7 +4,7 @@ import com.yellowmessenger.YmMessageReceiver
 import com.yellowmessenger.ui.xmpp.model.YmTicketCreateModel
 import com.yellowmessenger.ui.xmpp.model.YmXMPPMessageModel
 
-class YellowDemoMessageReceiver: YmMessageReceiver() {
+class YellowDemoMessageReceiver : YmMessageReceiver() {
 
     override fun onTicketCreateEventReceived(
         title: String?,

@@ -1,12 +1,11 @@
 package ai.yellow.demo
 
-import android.os.Handler
-import com.google.firebase.messaging.FirebaseMessagingService
-import com.google.firebase.messaging.RemoteMessage
-import com.yellowmessenger.YellowInbox
-
-
-class DemoFirebaseMessagingService : FirebaseMessagingService() {
+/**
+ * Add commented code in your project if you are using FCM
+ * Client need to send device token to SDK if it is changes
+ * Client need to handle video call notification if app is in foreground
+ * */
+class DemoFirebaseMessagingService { /*: FirebaseMessagingService() {
     override fun onNewToken(token: String) {
         sendRegistrationToServer(token)
     }
@@ -25,6 +24,5 @@ class DemoFirebaseMessagingService : FirebaseMessagingService() {
         if (message.data.containsKey("callJoinUrl") && !message.data["callJoinUrl"].isNullOrEmpty()) {
             YellowInbox.handleBackgroundNotification(applicationContext, message.data)
         }
-    }
-
+    }*/
 }

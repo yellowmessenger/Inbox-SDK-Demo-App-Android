@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         initListener()
 
+        //Check of app launched from Notification click, if yes take user to appropriate view
+        //This code will be required once client has integrated FCM and has sent Device token to SDK
         val data = getDataFromIntent()
         if (data.isNotEmpty()) {
             YellowInbox.startMyChatActivity(this)
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun initListener() {
         myChat.setOnClickListener {
             try {
+                // Launch My Chat Activity
                 YellowInbox.startMyChatActivity(this)
             } catch (e: Exception) {
                 showMessage(e.toString())
@@ -53,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         overview.setOnClickListener {
             try {
+                // Launch Overview Activity
                 YellowInbox.startOverviewActivity(this)
             } catch (e: Exception) {
                 showMessage(e.toString())

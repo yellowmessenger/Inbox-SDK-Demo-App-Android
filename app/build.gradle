@@ -2,7 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
+    // Add following line in app level build gradle file for enabling google services
+    //id 'com.google.gms.google-services'
 }
 
 android {
@@ -46,10 +47,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    //Firebase
-    implementation platform('com.google.firebase:firebase-bom:28.2.0')
-    implementation 'com.google.firebase:firebase-messaging'
-    implementation 'com.google.firebase:firebase-analytics-ktx'
+    //Add following dependency to add Firebase notification in your project
+    //implementation platform('com.google.firebase:firebase-bom:28.2.0')
+    //implementation 'com.google.firebase:firebase-messaging'
+    //mplementation 'com.google.firebase:firebase-analytics-ktx'
 
     //Library dependency
     implementation files('libs/yellow-inbox-sdk.aar')
