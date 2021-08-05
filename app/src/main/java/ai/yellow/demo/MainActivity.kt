@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeAgentStatusTo(status: YmAgentStatus) {
         try {
-            YellowInbox.changeAgentStatus(status).observe(this, Observer {
+            YellowInbox.setAgentStatus(status).observe(this, Observer {
                 when (it.status) {
                     Status.SUCCESS -> {
                         setCurrentStatus(status)
