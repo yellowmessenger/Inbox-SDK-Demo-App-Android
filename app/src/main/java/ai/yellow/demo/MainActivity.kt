@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         initListener()
 
-        //Check of app launched from Notification click, if yes take user to appropriate view
+        //Check if app launched from Notification click, if yes take user to appropriate view
         //This code will be required once client has integrated FCM and has sent Device token to SDK
         val data = getDataFromIntent()
         if (data.isNotEmpty()) {
